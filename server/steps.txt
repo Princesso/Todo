@@ -1,0 +1,16 @@
+steps followed in this project
+installed express
+installed express- generator gloally
+installed postgesql. A one time thing
+used alias names for postgress start and stop
+installed knex
+installed pg
+created db todo in the server folder
+use npx to run all knex commands
+knex is used to create tables in the database
+do an npx knex migrate:make todotable
+installed sqlite3
+to run postgresql db created use: psql -U Princess todo
+                                          username database
+
+
