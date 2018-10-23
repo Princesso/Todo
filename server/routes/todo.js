@@ -20,12 +20,15 @@ router.get('/new', function(req, res) {
        res.render('new');
 });
 
-const schema=Joi.object.keys({
-  
+const schema=Joi.object().keys({
+  title: Joi.string().min(5).max(20).required(),
+  description: Joi.string().required(),
+  priority: Joi.required(),
 })
 
 router.post('/new', (req, res)=> {
   //create file named new to be rendered
+  Joi.validate(req.body, schema)
        res.render('new');
 });
 
