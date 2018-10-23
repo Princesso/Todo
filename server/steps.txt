@@ -4,13 +4,53 @@ installed express- generator gloally
 installed postgesql. A one time thing
 used alias names for postgress start and stop
 installed knex
-installed pg
+installed pg                yarn knex pg
+npx knex init
 created db todo in the server folder
-use npx to run all knex commands
+use npx to run all knex commands since it doesn't add to path
 knex is used to create tables in the database
 do an npx knex migrate:make todotable
-installed sqlite3
+installed sqlite3 not necessary, was just part of my dependencies
 to run postgresql db created use: psql -U Princess todo
                                           username database
 
 
+
+
+$psql -U Princess todo
+psql (10.5)
+Type "help" for help.
+/////
+use a \dt to see the structue of the database we created
+use \d tablename to describe the table
+/////
+
+todo=# \dt
+                List of relations
+ Schema |         Name         | Type  |  Owner
+--------+----------------------+-------+----------
+ public | knex_migrations      | table | Princess
+ public | knex_migrations_lock | table | Princess
+ public | todotable            | table | Princess
+(3 rows)
+
+todo=# \d todotable
+                                       Table "public.todotable"
+   Column    |           Type           | Collation | Nullable |                Default
+-------------+--------------------------+-----------+----------+---------------------------------------
+ id          | integer                  |           | not null | nextval('todotable_id_seq'::regclass)
+ title       | text                     |           | not null |
+ priority    | integer                  |           | not null |
+ description | text                     |           |          |
+ done        | boolean                  |           | not null | false
+ date        | timestamp with time zone |           | not null |
+Indexes:
+    "todotable_pkey" PRIMARY KEY, btree (id)
+
+
+
+seed(fill) table with sample data.
+
+update the seeds and run the seed
+
+npx seed: run
